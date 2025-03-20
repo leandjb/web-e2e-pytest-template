@@ -1,18 +1,24 @@
-[project]
+[tool.poetry]
 name = "web-e2e-pytest-template"
 version = "0.1.0"
 description = "templates for e2e and api testing"
-authors = [
-    {name = "Leandro Barros",email = "leandjb@gmail.com"}
-]
-license = {text = "MIT"}
+authors = ["Leandro Barros <leandjb@gmail.com>"]
+license = "MIT"
 readme = "README.md"
-requires-python = ">=3.12"
-dependencies = [
-    "pytest (>=8.3.5,<9.0.0)",
+packages = [
+    { include = "src" }
 ]
 
+[tool.poetry.dependencies]
+python = "^3.12"
+pytest = "^8.3.5"
+typing-extensions = "^4.12.2"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = [
+    "."
+]
