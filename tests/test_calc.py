@@ -1,6 +1,7 @@
 import pytest
 from src.calc import Calculator
 
+@pytest.mark.regression
 @pytest.fixture
 def calculator():
     return Calculator()
